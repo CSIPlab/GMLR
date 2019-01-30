@@ -13,8 +13,11 @@ import skvideo.io
 #You can select measurement type
 #You can select number of measurements or ratio of missing pixels
 #You can select rank of the latent space
+#You can select the method for applying low rank constraint 
 #You can select initialization type of latent codes
 #You can select weight on similarity constraint
+#You can select if you need video output.
+#You can select the name and path of the video output
 
 # Sequence Directory
 sequence_dir='data/walking/'
