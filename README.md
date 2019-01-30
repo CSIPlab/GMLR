@@ -8,3 +8,5 @@ Generative Models for Low Rank Representation and Reconstruction of Videos
 4. matplotlib 2.2.3
 5. scipy 2.2.3
 6. numpy 1.15.1
+
+The codes are written for gpu enabled devices. You need to have nvidia driver installed to run this code.
