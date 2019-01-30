@@ -1,7 +1,8 @@
 from glob import glob
 from scipy import misc, linalg
 import torch
-from os.path import isfile
+from os.path import isfile, isdir
+from os import mkdir
 import numpy as np
 import matplotlib.pyplot as plt
 import skvideo.io
@@ -23,7 +24,7 @@ ngf = 64 # Height
 ndf = 64 # Width
 nc  = 3  # Channel
 
-measurement_type='missing' #'original', 'linear','missing'
+measurement_type='original' #'original', 'linear','missing'
 num_measurements=512 # Used only for linear measurements
 missing_ratio=0.8  # Used only for missing pixels
 if measurement_type=='original':
@@ -32,8 +33,8 @@ elif measurement_type=='missing':
     num_measurements=np.int(ngf*ndf*nc*(1-missing_ratio))
 matrix_id=1
 
-low_rank=16 # Can be at most max([z_dim,sequence_size]), If it is 0, then low rank constraint is not applied
-low_rank_type='pca' #'svd': Select top r singular value; 'pca': Select mean and top r-1 pca components
+low_rank=0 # Can be at most max([z_dim,sequence_size]), If it is 0, then low rank constraint is not applied
+low_rank_type='svd' #'svd': Select top r singular value; 'pca': Select mean and top r-1 pca components
 lamda= 1 # Weight on similarity constraint, total loss= lamda* MSE+ (1-lamda)* similarity constraint
 
 update_type='joint'#'latent','gen','joint'
@@ -112,6 +113,8 @@ if isfile('/measurement_matrix/batch_'+str(test_batch_size)+'_'+str(measurement_
 
 elif measurement_type=='linear':
     A =np.random.normal(loc=0.0, scale=1.0/np.sqrt(num_measurements), size=(test_batch_size,num_measurements,nc*ngf*ndf))
+    if not isdir('measurement_matrix'):
+        mkdir('measurement_matrix')
     np.save('measurement_matrix/batch_'+str(test_batch_size)+'_'+str(measurement_type)+'_'+str(num_measurements)+'_'+str(matrix_id),A)
              
 elif measurement_type=='missing':    
@@ -128,6 +131,8 @@ elif measurement_type=='missing':
             A_c[:,:,j]=A_temp            
         for j in range (0,nc):
             A[i,j,:,:]=A_c[:,:,j]
+    if not isdir('measurement_matrix'):
+        mkdir('measurement_matrix')
     np.save('measurement_matrix/batch_'+str(test_batch_size)+'_'+str(measurement_type)+'_'+str(num_measurements)+'_'+str(matrix_id),A)
 
 
