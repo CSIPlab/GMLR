@@ -7,6 +7,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import skvideo.io
 
+#You need to select the directory of the extracted frames.
+#You need to select number of  channels, 1 for grayscaled, 3 for rgb
+#You need to select initial weight of  the model, CIFAR10 for rgb, MNIST for grayscaled
+#You can select measurement type
+#You can select number of measurements or ratio of missing pixels
+#You can select rank of the latent space
+#You can select initialization type of latent codes
+#You can select weight on similarity constraint
+
 # Sequence Directory
 sequence_dir='data/walking/'
 sequence_files=sorted(glob(sequence_dir+'*.jpg'))
