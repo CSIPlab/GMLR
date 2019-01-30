@@ -17,7 +17,7 @@ import skvideo.io
 #You can select initialization type of latent codes
 #You can select weight on similarity constraint
 #You can select if you need video output.
-#You can select the name and path of the video output
+#You can select the name of the video output
 
 # Sequence Directory
 sequence_dir='data/walking/'
@@ -63,7 +63,9 @@ elif opt=='adam':
     alpha=200.0*test_batch_size/256
     
 video_gen=1 # It will save the video sequence
-video_name='video/archery'
+video_name='video/walking'
+if not isdir('video'):
+    mkdir('video')
     
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
 #Defining Generator class
