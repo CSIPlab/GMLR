@@ -7,21 +7,21 @@ import matplotlib.pyplot as plt
 import skvideo.io
 
 # Sequence Directory
-sequence_dir='data/archery/'
+sequence_dir='data/walking/'
 sequence_files=sorted(glob(sequence_dir+'*.jpg'))
 sequence_size=len(sequence_files)
 print('Number of frames in sequence: '+str(sequence_size))
 
 
 
-model_name='Model/CIFAR10_resize64_dcgan'
+init_model='model/CIFAR10_dcgan.pth'
 
 z_dim=256  # Dimension of latent code
 z_init='fixed_seed' # fixed_z, fixed_seed, random_seed
 seed=100 # Used when fixed seed or fixed_z is selected
-ngf = 64
-ndf = 64
-nc  = 3
+ngf = 64 # Height
+ndf = 64 # Width
+nc  = 3  # Channel
 
 measurement_type='missing' #'original', 'linear','missing'
 num_measurements=512 # Used only for linear measurements
@@ -32,7 +32,7 @@ elif measurement_type=='missing':
     num_measurements=np.int(ngf*ndf*nc*(1-missing_ratio))
 matrix_id=1
 
-low_rank=2 # Can be at most max([z_dim,sequence_size]), If it is 0, then low rank constraint is not applied
+low_rank=16 # Can be at most max([z_dim,sequence_size]), If it is 0, then low rank constraint is not applied
 low_rank_type='pca' #'svd': Select top r singular value; 'pca': Select mean and top r-1 pca components
 lamda= 1 # Weight on similarity constraint, total loss= lamda* MSE+ (1-lamda)* similarity constraint
 
@@ -43,16 +43,17 @@ test_batch_size=sequence_size
 
 opt='sgd' #'sgd','adam'
 if opt=='sgd':
-    lr=1*test_batch_size/256
-    alpha=200*test_batch_size/256
+    lr=1.0*test_batch_size/256
+    alpha=200.0*test_batch_size/256
 elif opt=='adam':
     lr=0.0001*test_batch_size/256
-    alpha=200*test_batch_size/256
+    alpha=200.0*test_batch_size/256
     
 video_gen=1 # It will save the video sequence
 video_name='video/archery'
     
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
+#Defining Generator class
 class Generator(torch.nn.Module):
     def __init__(self, ngpu):
         super(Generator, self).__init__()
@@ -103,7 +104,8 @@ for i in range (0,z_test.shape[0]):
     if z_init=='fixed_z':
         np.random.seed(seed)
     z_test[i,:]=np.random.normal(loc=0, scale=1.0, size=(1,z_dim))
-
+    z_test[i] = z_test[i, :] / np.linalg.norm(z_test[i, :], 2)
+    
     
 if isfile('/measurement_matrix/batch_'+str(test_batch_size)+'_'+str(measurement_type)+'_'+str(num_measurements)+'_'+str(matrix_id)+'.npy'):
     A=np.load('/measurement_matrix/batch_'+str(test_batch_size)+'_'+str(measurement_type)+'_'+str(num_measurements)+'_'+str(matrix_id)+'.npy')
@@ -152,7 +154,7 @@ loss_test=[]
 loss_z_test=[]
 x_rec=np.zeros((x_test.shape[0],nc,ngf,ndf))
 for batch_idx in range(0,batch_no):
-    generator = torch.load(model_name)
+    generator.load_state_dict(torch.load(init_model))
     if opt=='sgd':
         optimizer = torch.optim.SGD(generator.parameters(), lr)
     elif opt=='adam':
@@ -373,9 +375,9 @@ if low_rank==2:
     ax=plt.subplot()
     plt.scatter(a1[start_seq:end_seq,0], a1[start_seq:end_seq,1],s=area,alpha=1)
     plt.grid(True)
-    plt.xlabel('Weights on z_1')
-    plt.ylabel('Weights on z_2')
-    plt.title('Weights for representing each z of the sequence (2D)')
+    plt.xlabel('Weight on orthogonal basis 1')
+    plt.ylabel('Weight on orthogonal basis 2')
+    plt.title('2D Representation of Latent Codes')
     for i in range(a1.shape[0]):
         ax.annotate('  '+str(i+1), (a1[i,0], a1[i,1]))  
 
