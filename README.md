@@ -2,7 +2,7 @@
 This repository provides implementation of the algorithm of the paper:
 
 Some results:
-
+![rot_mnist](https://user-images.githubusercontent.com/32584505/52319847-a4444100-2980-11e9-8151-087a2ef22018.png)
 
 
 # Requirements
