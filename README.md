@@ -1,6 +1,7 @@
 # Generative Models for Low Rank Representation and Reconstruction of Videos
 This repository provides implementation of the algorithm of the paper:
-In this paper, we propose a generative model to learn compact latent codes that can efficiently represent and reconstruct a video sequence from its missing or under-sampled measurements. We propose a low rank constraint on the latent codes of the neighboring frames in the video sequence which allow us to represent the whole video sequence with very few number of latent codes. We also could linearize the articulation manifold of a video sequence by imposing low-rank structure on the latent codes. Furthermore, we demonstrate that even if the video sequence does not belong to the range of a pretrained network, we can still recover the true video sequence by jointly updating the latent codes and the weights of the generative network.
+
+In this paper, we propose a generative model to learn compact latent codes that can efficiently represent and reconstruct a video sequence from its missing or under-sampled measurements. We propose a low rank constraint on the corresponding latent codes of the neighboring frames in the video sequence which allow us to represent the whole video sequence with very few number of latent codes. We also could linearize the articulation manifold of a video sequence by imposing low-rank structure on the latent codes. Furthermore, we demonstrate that even if the video sequence does not belong to the range of a pretrained network, we can still recover the true video sequence by jointly updating the latent codes and the weights of the generative network.
 
 Some results:
 
