@@ -1,6 +1,6 @@
 # Generative Models for Low Rank Representation and Reconstruction of Videos
 This repository provides implementation of the algorithm of the paper:
-Some results:
+\\Some results:
 
 
 # Requirements
