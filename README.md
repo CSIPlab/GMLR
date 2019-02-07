@@ -15,7 +15,7 @@ Some results:
 
 # Requirements
 1. python 2.7 (Anaconda for python 2.7: https://www.anaconda.com/distribution/)
-2. pytorch 0.4.1 (To install pytorch in Anaconda: conda install pytorch torchvision cudatoolkit=9.0 -c pytorch)
+2. pytorch 0.4.1 (To install pytorch in Anaconda, run: "conda install pytorch torchvision cudatoolkit=9.0 -c pytorch")
 3. matplotlib 2.2.3 (Installing anaconda will automatically install it.)
 4. scipy 2.2.3 (Installing anaconda will automatically install it.)
 5. numpy 1.15.1 (Installing anaconda will automatically install it.)
