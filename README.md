@@ -20,7 +20,7 @@ Some results:
 4. scipy 2.2.3 (Installing anaconda will automatically install it.)
 5. numpy 1.15.1 (Installing anaconda will automatically install it.)
 
-The code is written for gpu enabled devices. You need to have nvidia driver installed to run it. (To install nvidia driver in Ubuntu OS: "sudo apt-get install nvidia-384" or "sudo apt-get install nvidia-current")
+The code is written for gpu enabled devices. You need to have nvidia driver installed to run it. (To install nvidia driver in Ubuntu OS, you may run: "sudo apt-get install nvidia-384" or "sudo apt-get install nvidia-current")
 
 # Citation
 If we use this code in your research, please cite this paper:
