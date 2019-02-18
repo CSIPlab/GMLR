@@ -12,7 +12,8 @@ Some results:
 
 ||
 | --- |
-|![bunny_true](https://user-images.githubusercontent.com/32584505/52978061-844f4d00-3384-11e9-9823-f32e1d8e3690.gif)![bunny_rec](https://user-images.githubusercontent.com/32584505/52978088-a3e67580-3384-11e9-9085-85766b244f67.gif)![bunny_int](https://user-images.githubusercontent.com/32584505/52978109-b8c30900-3384-11e9-969e-6452a817e016.gif)|
+|![bunny_true](https://user-images.githubusercontent.com/32584505/52978061-844f4d00-3384-11e9-9823-f32e1d8e3690.gif)![bunny_rec](https://user-images.githubusercontent.com/32584505/52978088-a3e67580-3384-11e9-9085-85766b244f67.gif)!
+![bunny_int](https://user-images.githubusercontent.com/32584505/52978364-d2b11b80-3385-11e9-97a6-f8320006f594.gif)
 ![z_manifold_bunny_new_seq](https://user-images.githubusercontent.com/32584505/52978132-d09a8d00-3384-11e9-81c9-754a2d8e4819.png)
 
 
