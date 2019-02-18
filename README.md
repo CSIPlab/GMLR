@@ -10,6 +10,7 @@ Some results:
 |![rot_mnist](https://user-images.githubusercontent.com/32584505/52319847-a4444100-2980-11e9-8151-087a2ef22018.png)| ![z_manifold_rot_mnist](https://user-images.githubusercontent.com/32584505/52319883-cfc72b80-2980-11e9-8cd6-1bbac809de70.png)|
 |![walking](https://user-images.githubusercontent.com/32584505/52320027-95aa5980-2981-11e9-8127-29e30e857b25.png)| ![z_manifold_walking](https://user-images.githubusercontent.com/32584505/52320037-a5c23900-2981-11e9-9607-9c803ebed7d1.png)|
 
+||
 | --- |
 |![bunny_true](https://user-images.githubusercontent.com/32584505/52978061-844f4d00-3384-11e9-9823-f32e1d8e3690.gif) 
 ![bunny_rec](https://user-images.githubusercontent.com/32584505/52978088-a3e67580-3384-11e9-9085-85766b244f67.gif)
