@@ -11,6 +11,12 @@ Some results:
 |![walking](https://user-images.githubusercontent.com/32584505/52320027-95aa5980-2981-11e9-8127-29e30e857b25.png)| ![z_manifold_walking](https://user-images.githubusercontent.com/32584505/52320037-a5c23900-2981-11e9-9607-9c803ebed7d1.png)|
 
 
+![bunny_true](https://user-images.githubusercontent.com/32584505/52978061-844f4d00-3384-11e9-9823-f32e1d8e3690.gif) 
+![bunny_rec](https://user-images.githubusercontent.com/32584505/52978088-a3e67580-3384-11e9-9085-85766b244f67.gif)
+![bunny_int](https://user-images.githubusercontent.com/32584505/52978109-b8c30900-3384-11e9-969e-6452a817e016.gif)
+![z_manifold_bunny_new_seq](https://user-images.githubusercontent.com/32584505/52978132-d09a8d00-3384-11e9-81c9-754a2d8e4819.png)
+
+
 
 
 # Requirements
