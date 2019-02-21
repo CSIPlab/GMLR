@@ -28,7 +28,7 @@ Some results:
 The code is written for gpu enabled devices. You need to have nvidia driver installed to run it. (To install nvidia driver in Ubuntu OS, you may run: "sudo apt-get install nvidia-384" or "sudo apt-get install nvidia-current")
 
 # Citation
-If we use this code in your research, please cite this paper:
+If you use this code in your research, please cite this paper:
 
 
 
