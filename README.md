@@ -31,11 +31,7 @@ The code is written for gpu enabled devices. You need to have nvidia driver inst
 If you use this code in your research, please cite this paper: 
 
 Rakib Hyder and M. Salman Asif, "Generative Models for Low-Rank Video Representation and Reconstruction." arXiv preprint, arxiv:1902.11132, 2019.
-
-
-
-
-## Citation
+ 
 ```
 @article{hyder2018GMLR,
     author    = {Rakib Hyder and M. Salman Asif},
