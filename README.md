@@ -28,7 +28,8 @@ Some results:
 The code is written for gpu enabled devices. You need to have nvidia driver installed to run it. (To install nvidia driver in Ubuntu OS, you may run: "sudo apt-get install nvidia-384" or "sudo apt-get install nvidia-current")
 
 # Citation
-If you use this code in your research, please cite this paper:
+If you use this code in your research, please cite this paper: 
+
 Rakib Hyder and M. Salman Asif, "Generative Models for Low-Rank Video Representation and Reconstruction." arXiv preprint, arxiv.org/abs/1902.11132
 
 
